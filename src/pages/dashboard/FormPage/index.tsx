@@ -1,21 +1,24 @@
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
-import React, { useState, useEffect } from 'react';
-import { Spin, Button } from 'antd';
+import React, { useState } from 'react';
+import { Button } from 'antd';
 import styles from './index.less';
-
+import ModalBasic from './ModalBasic';
 export default () => {
-  const [loading, setLoading] = useState<boolean>(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+  const [object, setObject] = useState({});
+
+  const handleClick = () => {
+    setObject({
+      name: 'Diego',
+      lastName: 'Vega',
+      age: 22,
+    });
+    console.log(object);
+  };
+
   return (
     <PageHeaderWrapper content="" className={styles.main}>
-        <Button>Ok</Button>
-      <div style={{ paddingTop: 100, textAlign: 'center' }}>
-        <Spin spinning={loading} size="large" />
-      </div>
+      <Button onClick={handleClick}>Ok</Button>
+      <ModalBasic />
     </PageHeaderWrapper>
   );
 };
