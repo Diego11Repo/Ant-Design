@@ -1,55 +1,33 @@
-import React from "react";
-import styles from "./index.less";
-import { Modal, Button } from "antd";
+import React, { useState } from 'react';
+import { Modal, Button } from 'antd';
 
-class App extends React.Component {
-  state = { visible: false };
+const ModalBasic = ({ object }) => {
+  const [visible, setVisible] = useState(false);
 
-  showModal = () => {
-    this.setState({
-      visible: true
-    });
+  const showModal = () => {
+    setVisible(true);
   };
 
-  handleOk = e => {
-    console.log(e);
-    this.setState({
-      visible: false
-    });
+  const handleOk = () => {
+    setVisible(false);
   };
 
-  handleCancel = e => {
-    console.log(e);
-    this.setState({
-      visible: false
-    });
+  const handleCancel = () => {
+    setVisible(false);
   };
 
-  render() {
-    return (
-      <div>
-        <Button type="primary" onClick={this.showModal}>
-          Open Modal
-        </Button>
-        <Modal
-          title="Basic Modal"
-          visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
-      </div>
-    );
-  }
-}
-
-export default () => (
-  <div className={styles.container}>
-    <div id="components-modal-demo-basic">
-      <App />
+  return (
+    <div>
+      <Button type="primary" onClick={showModal}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" visible={visible} onOk={handleOk} onCancel={handleCancel}>
+        <p>{object.name}</p>
+        <p>{object.lastName}</p>
+        <p>{object.age}</p>
+      </Modal>
     </div>
-  </div>
-);
+  );
+};
+
+export default ModalBasic;

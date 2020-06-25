@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import styles from './index.less';
 import ModalBasic from './ModalBasic';
+
 export default () => {
   const [object, setObject] = useState({});
 
@@ -12,13 +13,12 @@ export default () => {
       lastName: 'Vega',
       age: 22,
     });
-    console.log(object);
   };
 
   return (
-    <PageHeaderWrapper content="" className={styles.main}>
+    <PageHeaderWrapper className={styles.main}>
       <Button onClick={handleClick}>Ok</Button>
-      <ModalBasic />
+      <ModalBasic object={object}/>
     </PageHeaderWrapper>
   );
 };
