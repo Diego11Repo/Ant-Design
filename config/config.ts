@@ -97,6 +97,12 @@ export default defineConfig({
                   path: '/dashboard/workplace',
                   component: './dashboard/workplace',
                 },
+                {
+                  name: 'Form Page',
+                  icon: 'smile',
+                  path: '/dashboard/formpage',
+                  component: './dashboard/FormPage',
+                },
               ],
             },
             {
@@ -319,7 +325,7 @@ export default defineConfig({
           resourcePath: string;
         },
         _: string,
-        localName: string,
+        localName: string
       ) => {
         if (
           context.resourcePath.includes('node_modules') ||
