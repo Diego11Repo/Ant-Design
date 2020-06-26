@@ -18,7 +18,7 @@ export default () => {
   return (
     <PageHeaderWrapper className={styles.main}>
       <Button onClick={handleClick}>Ok</Button>
-      <ModalBasic object={object}/>
+      <ModalBasic object={object} />
     </PageHeaderWrapper>
   );
 };
