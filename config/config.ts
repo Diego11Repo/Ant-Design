@@ -292,6 +292,25 @@ export default defineConfig({
               ],
             },
             {
+              name: 'diego',
+              icon: 'smile',
+              path: '/diego',
+              routes: [
+                {
+                  name: 'login',
+                  icon: 'smile',
+                  path: '/diego/login',
+                  component: './diego/login',
+                },
+                {
+                  name: 'blankpage',
+                  icon: 'smile',
+                  path: '/diego/blankpage',
+                  component: './diego/blankpage',
+                },
+              ],
+            },
+            {
               path: '/',
               redirect: '/dashboard/analysis',
               authority: ['admin', 'user'],
